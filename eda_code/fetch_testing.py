@@ -2,7 +2,7 @@ import pandas as pd
 
 import requests
 
-from walk_app.ref.keys import REFRESH_KEY
+from walk_app.ref.api_keys import REFRESH_KEY
 
 open_data_url = "https://api.mobilitydatabase.org/v1/tokens"
 
