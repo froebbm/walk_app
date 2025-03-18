@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools.packages.find]
+# All the following settings are optional:
+include = ["walk_app"]  # ["*"] by default
+exclude = ["data", ".vscode", "eda_code"]  # empty by default
+namespaces = false  # true by default
+
+[project]
+name = "walk_app"
+version = "0.0.3"
+dependencies = [
+    # "python_version >= 3.12",
+    "pysal == 25.1",
+    "ipykernel == 6.29.5"
+]

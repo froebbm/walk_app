@@ -19,13 +19,13 @@ GOTO %1
         :: Install yaml
         CALL mamba install -c conda-forge pyyaml
         :: update environment with package dependencies
-        CALL python check_package_deps.py --package
+        :: CALL python check_package_deps.py --package
         :: Create new environment from environment file
-        CALL mamba env create -f build_environment.yml
+        CALL mamba env create -f environment.yml
         :: Activate the environment so you can get to work
         CALL activate %ENV_NAME%
         :: Install the local package in development (experimental) mode
-        CALL python -m pip install -e .
+        CALL pip install --editable .
     )
     EXIT /B
 
