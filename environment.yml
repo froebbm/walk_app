@@ -6,3 +6,7 @@ channels:
 dependencies:
   - python=3.12.9
   - pysal=25.1
+  - ipykernel=6.29.5
+  - pip:
+    - us
+    - censusgeocode

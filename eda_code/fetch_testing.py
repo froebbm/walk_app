@@ -2,6 +2,11 @@ import pandas as pd
 
 import requests
 
-from ref.keys import REFRESH_KEY
+# from eda_code.ref.keys import REFRESH_KEY
 
-# def get
+open_data_url = "https://api.mobilitydatabase.org/v1/tokens"
+
+requests.get()
+
+def get_access_token(ref_key = REFRESH_KEY):
+    pass
