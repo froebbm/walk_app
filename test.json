@@ -1,0 +1,99 @@
+{
+    "id": "mdb-1846",
+    "data_type": "gtfs",
+    "status": "active",
+    "created_at": "2024-02-08T00:00:00Z",
+    "official": true,
+    "official_updated_at": "2025-01-22T20:19:42.509622",
+    "external_ids": [
+        {
+            "external_id": "1846",
+            "source": "mdb"
+        }
+    ],
+    "provider": "Washington Metropolitan Area Transit Authority (WMATA)",
+    "feed_name": "Bus",
+    "note": "",
+    "feed_contact_email": "gtfs-support@wmata.com",
+    "source_info": {
+        "producer_url": "https://api.wmata.com/gtfs/bus-gtfs-static.zip",
+        "authentication_type": 1,
+        "authentication_info_url": "https://developer.wmata.com/signup/",
+        "api_key_parameter_name": "api_key",
+        "license_url": "https://developer.wmata.com/license"
+    },
+    "redirects": [],
+    "locations": [
+        {
+            "country_code": "US",
+            "country": "United States",
+            "subdivision_name": "Maryland",
+            "municipality": "Prince George's County"
+        },
+        {
+            "country_code": "US",
+            "country": "United States",
+            "subdivision_name": "Virginia",
+            "municipality": "Fairfax County"
+        },
+        {
+            "country_code": "US",
+            "country": "United States",
+            "subdivision_name": "Virginia",
+            "municipality": "Alexandria"
+        },
+        {
+            "country_code": "US",
+            "country": "United States",
+            "subdivision_name": "District of Columbia",
+            "municipality": "Washington"
+        },
+        {
+            "country_code": "US",
+            "country": "United States",
+            "subdivision_name": "Virginia",
+            "municipality": "Arlington County"
+        },
+        {
+            "country_code": "US",
+            "country": "United States",
+            "subdivision_name": "Virginia",
+            "municipality": "Fairfax"
+        },
+        {
+            "country_code": "US",
+            "country": "United States",
+            "subdivision_name": "Virginia",
+            "municipality": "Falls Church"
+        },
+        {
+            "country_code": "US",
+            "country": "United States",
+            "subdivision_name": "Maryland",
+            "municipality": "Montgomery County"
+        }
+    ],
+    "latest_dataset": {
+        "id": "mdb-1846-202412230108",
+        "hosted_url": "https://files.mobilitydatabase.org/mdb-1846/mdb-1846-202412230108/mdb-1846-202412230108.zip",
+        "bounding_box": {
+            "minimum_latitude": 38.694263,
+            "maximum_latitude": 39.155724,
+            "minimum_longitude": -77.366072,
+            "maximum_longitude": -76.720367
+        },
+        "downloaded_at": "2024-12-23T01:08:19.882313Z",
+        "hash": "6620222cfeccfaf87ecd1bf716e24758fcdf13c6e3dd1ba4c41135628b6183e8",
+        "service_date_range_start": "2024-12-15T00:00:00Z",
+        "service_date_range_end": "2025-06-28T00:00:00Z",
+        "agency_timezone": null,
+        "validation_report": {
+            "total_error": 0,
+            "total_warning": 916,
+            "total_info": 2,
+            "unique_error_count": 0,
+            "unique_warning_count": 5,
+            "unique_info_count": 1
+        }
+    }
+}
