@@ -142,6 +142,8 @@ ENV/
 env.bak/
 venv.bak/
 
+walk_app/ref/api_keys.py
+
 # Spyder project settings
 .spyderproject
 .spyproject
