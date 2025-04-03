@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import geopandas as gpd
-
+# import pandanas as pdna
 from warnings import warn
 
 #TODO replace the network class
@@ -67,36 +67,36 @@ def access_ratio(
             parcels.geometry = parcels.centroid
             parcels = parcels.sjoin(self.sum_areas)
 
-            network = Network.from_gdf(
-                self.walk_geo, twoway="SNIFF", impedance_col="length"
-            )
+            # network = Network.from_gdf(
+            #     self.walk_geo, twoway="SNIFF", impedance_col="length"
+            # )
 
             distances = []
             for stn in sum_points[self.sum_id]:
                 stn_parcels = parcels.loc[parcels[self.sum_id] == stn]
                 stn_loc = sum_points.loc[sum_points[self.sum_id] == stn]
 
-                parcel_nodes = network.pdna.get_node_ids(
-                    stn_parcels.geometry.x, stn_parcels.geometry.y
-                )
-                stn_node = network.pdna.get_node_ids(
-                    stn_loc.geometry.x, stn_loc.geometry.y
-                )
+                # parcel_nodes = network.pdna.get_node_ids(
+                #     stn_parcels.geometry.x, stn_parcels.geometry.y
+                # )
+                # stn_node = network.pdna.get_node_ids(
+                #     stn_loc.geometry.x, stn_loc.geometry.y
+                # )
 
-                net_distances = network.pdna.shortest_path_lengths(
-                    pd.Series(np.repeat(stn_node, len(parcel_nodes))).to_list(), 
-                    parcel_nodes.to_list()
-                    )
+                # net_distances = network.pdna.shortest_path_lengths(
+                #     pd.Series(np.repeat(stn_node, len(parcel_nodes))).to_list(), 
+                #     parcel_nodes.to_list()
+                #     )
                 
-                par_dist = pd.DataFrame(
-                    {
-                        parcel_id: stn_parcels[parcel_id],
-                        self.sum_id: stn,
-                        "net_dist": net_distances,
-                    }
-                )
+                # par_dist = pd.DataFrame(
+                #     {
+                #         parcel_id: stn_parcels[parcel_id],
+                #         self.sum_id: stn,
+                #         "net_dist": net_distances,
+                #     }
+                # )
 
-                distances.append(par_dist)
+                # distances.append(par_dist)
 
             distances = pd.concat(distances)
             # Remove NAs
@@ -129,9 +129,10 @@ def access_ratio(
             )
 
             if out_dir != None:
-                parcels.merge(final_distances).to_file(
-                    make_path(out_dir, f"{out_name}.shp")
-                )
+                # parcels.merge(final_distances).to_file(
+                #     make_path(out_dir, f"{out_name}.shp")
+                # )
+                pass
 
             final_distances.replace(0, np.NaN, inplace=True)
 
