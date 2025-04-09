@@ -6,6 +6,8 @@ from zipfile import ZipFile
 from io import BytesIO
 from shapely import Point, LineString
 
+#TODO add the projection to UTM into the class 
+
 def convert_xy_to_point(df, lat="stop_lat", lon="stop_lon"):
     pt_geo = [Point(xy) for xy in zip(df[lon],df[lat])]
     pts = gpd.GeoDataFrame(df, geometry=pt_geo, crs="wgs84")

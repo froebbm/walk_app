@@ -2,12 +2,18 @@
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+include-package-data = true
 
 [tool.setuptools.packages.find]
 # All the following settings are optional:
 include = ["walk_app"]  # ["*"] by default
 exclude = ["data", ".vscode", "eda_code"]  # empty by default
 namespaces = false  # true by default
+
+[tool.setuptools.package-data]
+# "*" = ["*.txt"]
+data = ["*.geojson"]
 
 [project]
 name = "walk_app"
