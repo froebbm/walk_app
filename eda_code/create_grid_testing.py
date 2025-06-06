@@ -54,6 +54,8 @@ def create_grid(buffer):
 
     return grid
 
-grid = create_grid(buffers.iloc[[1],:])
-grid
-grid.explore(column="grid_id")
+grids = []
+
+for index, row in buffers.iterrows():
+    out_grid = create_grid(gpd.GeoDataFrame(row, geometry='geometry'))
+    grids.append(out_grid)

@@ -23,4 +23,17 @@ def proj_to_utm(gdf):
         
     return gdf
     
+def convert_xy_to_point(df, lat="stop_lat", lon="stop_lon"):
+    pt_geo = [Point(xy) for xy in zip(df[lon],df[lat])]
+    pts = gpd.GeoDataFrame(df, geometry=pt_geo, crs="wgs84")
+    return pts
+
+def convert_shapes_to_gdf(df, lon='shape_pt_lon', lat='shape_pt_lat'):
+    pts = convert_xy_to_point(df, lon=lon, lat=lat)
     
+    lines = pts.groupby('shape_id')['geometry'].apply(
+        lambda x: LineString(x.tolist())
+        )
+    
+    lines = gpd.GeoDataFrame(lines, geometry="geometry", crs="wgs84")
+    return lines
