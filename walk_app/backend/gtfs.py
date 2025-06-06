@@ -5,6 +5,7 @@ import geopandas as gpd
 from zipfile import ZipFile
 from io import BytesIO
 from shapely import Point, LineString
+from walk_app.helpers import proj_to_utm
 
 #TODO add the projection to UTM into the class 
 
@@ -40,9 +41,11 @@ class gtfs:
         
         shapes = pd.read_csv(z.open("shapes.txt"))
         shapes = convert_shapes_to_gdf(shapes)
+        shapes = proj_to_utm(shapes)
         
         stops = pd.read_csv(z.open("stops.txt"))
         stops = convert_xy_to_point(stops)
+        stops = proj_to_utm(stops)
         
         return cls(
             shapes=shapes,
